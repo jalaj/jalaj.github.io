@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Amul HITS!!! (Unofficial)</title>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+
+        #banner {
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 2em;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #head {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        #head label,
+        #head input,
+        #head select {
+            margin-right: 10px;
+        }
+
+        #head input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        #head select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1.1em;
+            padding: 5px;
+			padding-left:10px;
+            margin: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card p {
+            background-color: #e8e9ea;
+            color: #333;
+            font-size: 0.9em;
+            padding: 10px;
+            margin: 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #pagination button {
+            padding: 10px;
+            margin: 0 5px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        #scroll-to-top i {
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            #head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #head label,
+            #head input,
+            #head select {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+	</head>
+
+<body>
+    <a href="#" id="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <div id="banner">Amul HITS!!! (unofficial)</div>
+    <div id="head"><span>
+            <label for="year-dropdown">Select Year:</label>
+            <select id="year-dropdown" onchange="filterByYear()">
+                <option value="all">All Years</option>
+                <!-- Add your years dynamically based on your data -->
+                <option value='2023'>2023</option>
+                <option value='2022'>2022</option>
+                <option value='2021'>2021</option>
+                <option value='2020'>2020</option>
+                <option value='2019'>2019</option>
+                <option value='2018'>2018</option>
+                <option value='2017'>2017</option>
+                <option value='2016'>2016</option>
+                <option value='2015'>2015</option>
+                <option value='2014'>2014</option>
+                <option value='2013'>2013</option>
+                <option value='2012'>2012</option>
+                <option value='2011'>2011</option>
+                <option value='2010'>2010</option>
+                <option value='2009'>2009</option>
+                <option value='2008'>2008</option>
+                <option value='2007'>2007</option>
+                <option value='2006'>2006</option>
+                <option value='2005'>2005</option>
+                <option value='2004'>2004</option>
+                <option value='2003'>2003</option>
+                <option value='2002'>2002</option>
+                <option value='2001'>2001</option>
+                <option value='2000'>2000</option>
+                <option value='1999'>1999</option>
+                <option value='1998'>1998</option>
+                <option value='1997'>1997</option>
+                <option value='1996'>1996</option>
+                <option value='1995'>1995</option>
+                <option value='1994'>1994</option>
+                <option value='1993'>1993</option>
+                <option value='1992'>1992</option>
+                <option value='1991'>1991</option>
+                <option value='1990'>1990</option>
+                <option value='1989'>1989</option>
+                <option value='1987'>1987</option>
+                <option value='1986'>1986</option>
+                <option value='1983'>1983</option>
+                <option value='1982'>1982</option>
+                <option value='1981'>1981</option>
+                <option value='1979'>1979</option>
+                <option value='1976'>1976</option>
+                <!-- Add more years as needed -->
+            </select></span><span>
+            <label for="search-box">Search Description:</label>
+            <input type="text" id="search-box" onchange="filterByDescription()" placeholder="Type to search"></span>
+    </div>
+    <div id="cards-container"></div>
+    <div id="pagination">
+        <button id="prevButton" onclick="previousPage()">Previous</button>
+        <span id="page-info"></span>
+        <button id="nextButton" onclick="nextPage()">Next</button>
+    </div>
+
+    <script>
+        // Variables
+        const cardsContainer = document.getElementById('cards-container');
+        const pageInfo = document.getElementById('page-info');
+        const itemsPerPage = 30;
+        let currentPage = 1;
+        let data = []; // This will hold your CSV data
+        let selectedYear = 'all';
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        // Function to fetch CSV data
+        function fetchData() {
+            // Use your CSV file path or URL
+            fetch('amulhits.tsv')
+                .then(response => response.text())
+                .then(csv => {
+                    data = csvToObjects(csv);
+                    renderPage();
+                });
+        }
+
+        function filterByYear() {
+            selectedYear = document.getElementById('year-dropdown').value;
+            document.getElementById('search-box').value = "";
+            currentPage = 1;
+            renderPage();
+        }
+
+        function filterByDescription() {
+            searchQuery = document.getElementById('search-box').value.toLowerCase();
+            document.getElementById('year-dropdown').value = "all";
+            currentPage = 1;
+            renderPage();
+        }
+        // Function to convert CSV to array of objects
+        function csvToObjects(csv) {
+            const lines = csv.split('\n');
+            const headers = lines[0].split('\t');
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const currentLine = lines[i].split('\t');
+                const obj = {};
+
+                for (let j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentLine[j];
+                }
+
+                result.push(obj);
+            }
+
+            return result;
+        }
+
+        // Function to render current page
+        function renderPage() {
+            selectedYear = document.getElementById('year-dropdown').value;
+            searchQuery = document.getElementById('search-box').value.toLowerCase();
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            if (selectedYear === 'all') {
+                currentPageData = data.slice(startIndex, endIndex);
+                pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(data.length / itemsPerPage)}`;
+                totalPages = Math.ceil(data.length / itemsPerPage);
+
+            } else {
+                filteredData = data.filter(item => item.year === selectedYear);
+                currentPageData = filteredData.slice(startIndex, endIndex);
+                pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(filteredData.length / itemsPerPage)}`;
+                totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            }
+            if (searchQuery != "") {
+                filteredData = data.filter(item => item.description.includes(searchQuery));
+                currentPageData = filteredData.slice(startIndex, endIndex);
+                pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(filteredData.length / itemsPerPage)}`;
+                totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            }
+            cardsContainer.innerHTML = '';
+            //pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(data.length / itemsPerPage)}`;
+            //document.getElementById('prevButton').style.display = currentPage === 1 ? 'none' : 'inline';
+            //document.getElementById('nextButton').style.display = currentPage === totalPages - 1 ? 'none' : 'visible';
+            //alert(currentPage+"/"+totalPages);
+            document.getElementById('prevButton').style.visibility = (currentPage === 1 ? 'hidden' : 'visible');
+            document.getElementById('nextButton').style.visibility = (currentPage === totalPages ? 'hidden' : 'visible');
+            currentPageData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                //card.style.backgroundImage = `url(${item.image})`;
+                card.innerHTML = `
+	  <h2>${item.title}</h2><img src="${item.image}"/><p>${item.description}</p>
+        
+      `;
+                cardsContainer.appendChild(card);
+            });
+        }
+
+        // Function to navigate to the previous page
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage();
+                scrollToTop();
+            }
+        }
+
+        // Function to navigate to the next page
+        function nextPage() {
+            if (currentPage < Math.ceil(data.length / itemsPerPage)) {
+                currentPage++;
+                renderPage();
+                scrollToTop();
+            }
+        }
+
+        // Fetch data and render initial page
+        fetchData();
+    </script>
+
+</body>
+
+</html>
